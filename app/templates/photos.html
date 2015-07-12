@@ -12,7 +12,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a id="home-btn" class="navbar-brand custom-nav" href="/welcome">PRODUCT NAME</a>
+      <a id="home-btn" class="navbar-brand custom-nav" href="/welcome">ADVOKIT</a>
     </div>
 
     <div>
@@ -25,7 +25,7 @@
 
 <div class="container-fluid non-nav" id="empty">
   <div class="row mini-header">
-    <div class="col-md-3 location">PERSON > {{ perpname }}</div>
+    <div class="col-md-3 location">PERSON > {{ perpname.upper() }}</div>
     <div class="col-md-offset-4 col-md-1">
       <button id="create-pdf" type="" data-toggle="modal">CREATE PDF</button>
     </div>
@@ -91,34 +91,38 @@
             <div class="modal-body row">
 
               <div class="col-md-6">
-                <img id="output"/>
-                <input name ="file" type="file" accept="image/*" onchange="loadFile(event)">
+                <div class="meta-container">
+                <div class="upload-container">
+                  <img id="output"/>
+                  <input id="choose-file" name ="file" type="file" accept="image/*" onchange="loadFile(event)">
+                </div>
+              </div>
               </div>
 
               <div class="col-md-6">
 
                 <div class="input-group">
                   <p class="input-header">Who sent you this message?</p>
-                  <p class="input-subheader">Give them a nickname like "butthead123" to preserve annonymity.</p>
-                  <input class="input-field" type="text" name="name" placeholder=" Name">
+                  <p class="input-subheader">Give this person a nickname to preserve annonymity.</p>
+                  <input class="input-field" type="text" name="name" placeholder="Name">
                 </div>
 
                 <div class="input-group">
                   <p class="input-header">When did this happen?</p>
-                  <input class="input-field" type="date" name="date" placeholder="">
+                  <input class="input-field" type="date" name="date" placeholder="Select a date">
                 </div>
 
                 <div class="input-group">
                   <p class="input-header">What's the context?</p>
-                  <p class="input-subheader">Add some notes about the context of this exchange (where it happened, why it happened, any relevant events before/afterwards, etc.)</p>
-                  <textarea class="input-field" id="textfield" rows="10" placeholder=" Context" name="content"></textarea>
+                  <p class="input-subheader"></p>
+                  <textarea class="input-field" id="textfield" rows="10" placeholder="Add some notes about the context of this exchange for future reference." name="content"></textarea>
                 </div>
 
               </div>
             </div>
 
             <div class="modal-footer">
-              <input type="submit" class="btn btn-default pull-left" id="donebtn" value="UPLOAD">
+              <input type="submit" class="btn btn-default pull-left" id="donebtn" value="DONE">
               <button type="button" class="btn btn-default pull-left" id="cancelbtn" data-dismiss="modal">CANCEL</button>
             </div>
           </form>

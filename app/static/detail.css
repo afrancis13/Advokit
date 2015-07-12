@@ -32,6 +32,9 @@ body {
   height: 900px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
   background: white;
+	position: absolute;
+	right: 0;
+	padding: 0;
 }
 
 #get_help textarea {
@@ -113,5 +116,20 @@ body {
 div.comment {
 	border: 1px solid #F6C991;
 	border-radius: 5px;
-	
+	background: #F6C991;
+	padding: 12px 12px 12px 12px;
+	margin-bottom: 10px;
+}
+
+.comment-date {
+	font-size: 10px;
+}
+
+.img-container {
+	text-align: center;
+}
+
+#det-img {
+	width: 300px;
+	height: auto;
 }

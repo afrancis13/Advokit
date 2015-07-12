@@ -1,0 +1,20 @@
+<link href= '{{ url_for("static", filename="pdf.css") }}' rel='stylesheet' />
+
+<center>
+<h1>Case Report</h1>
+
+<h3>Offender Name: {{ perpname }}</h3>
+
+<h3>Conversation History</h3>
+{% for photo in photos %}
+	<img src="{{ photo.get_url() }}" />
+	<br>
+	Incident Date: {{ photo.when }}
+	<h4>Comments</h4>
+	{% for comment in photo.comments.all() %}
+		{{ comment.content }}
+		<br>
+		<span class="timestamp">{{ comment.created }}</span>
+	{% endfor %}
+{% endfor %}
+</center>

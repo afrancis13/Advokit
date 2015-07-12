@@ -5,3 +5,4 @@ uploads/*
 db_repository/versions/*
 *.swp
 .DS_Store
+flaskapp/*

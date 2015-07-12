@@ -12,7 +12,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a id="home-btn" class="navbar-brand custom-nav" href="/welcome">PRODUCT NAME</a>
+      <a id="home-btn" class="navbar-brand custom-nav" href="/welcome">ADVOKIT</a>
     </div>
 
     <div>
@@ -39,7 +39,7 @@
 
     	<div class="circle">
     		<div class="perp">
-    			<a class="perp" href="{{ perp.get_photo_url() }}">{{ perp.name }}</a>
+    			<a class="perp" href="{{ perp.get_photo_url() }}">{{ perp.name.upper() }}</a>
     		</div>
     	</div>
 
@@ -63,53 +63,57 @@
 
   </div>
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+		<div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
+	    	<!-- Modal content-->
+	    	<div class="modal-content">
 
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">UPLOAD A PHOTO</h4>
-          </div>
+	    		<div class="modal-header">
+	    			<button type="button" class="close" data-dismiss="modal">&times;</button>
+	    			<h4 class="modal-title">UPLOAD A PHOTO</h4>
+	    		</div>
 
-          <form method="POST" action="/upload" enctype="multipart/form-data">
-            <div class="modal-body row">
+	    		<form method="POST" action="/upload" enctype="multipart/form-data">
+		    		<div class="modal-body row">
 
-              <div class="col-md-6">
-                <img id="output"/>
-                <input name ="file" type="file" accept="image/*" onchange="loadFile(event)">
-              </div>
+		    			<div class="col-md-6">
+								<div class="meta-container">
+								<div class="upload-container">
+			    				<img id="output"/>
+			    				<input id="choose-file" name ="file" type="file" accept="image/*" onchange="loadFile(event)">
+								</div>
+							</div>
+		    			</div>
 
-              <div class="col-md-6">
+		    			<div class="col-md-6">
 
-                <div class="input-group">
-                  <p class="input-header">Who sent you this message?</p>
-                  <p class="input-subheader">Give them a nickname like "butthead123" to preserve annonymity.</p>
-                  <input class="input-field" type="text" name="name" placeholder=" Name">
-                </div>
+		    				<div class="input-group">
+		    					<p class="input-header">Who sent you this message?</p>
+		    					<p class="input-subheader">Give this person a nickname to preserve annonymity.</p>
+		    					<input class="input-field" type="text" name="name" placeholder="Name">
+		    				</div>
 
-                <div class="input-group">
-                  <p class="input-header">When did this happen?</p>
-                  <input class="input-field" type="date" name="date" placeholder="">
-                </div>
+		    				<div class="input-group">
+		    					<p class="input-header">When did this happen?</p>
+		    					<input class="input-field" type="date" name="date" placeholder="Select a date">
+		    				</div>
 
-                <div class="input-group">
-                  <p class="input-header">What's the context?</p>
-                  <p class="input-subheader">Add some notes about the context of this exchange (where it happened, why it happened, any relevant events before/afterwards, etc.)</p>
-                  <textarea class="input-field" id="textfield" rows="10" placeholder=" Context" name="content"></textarea>
-                </div>
+		    				<div class="input-group">
+		    					<p class="input-header">What's the context?</p>
+		    					<p class="input-subheader"></p>
+		    					<textarea class="input-field" id="textfield" rows="10" placeholder="Add some notes about the context of this exchange for future reference." name="content"></textarea>
+		    				</div>
 
-              </div>
-            </div>
+		    			</div>
+		    		</div>
 
-            <div class="modal-footer">
-              <input type="submit" class="btn btn-default pull-left" id="donebtn" value="Upload">
-              <button type="button" class="btn btn-default pull-left" id="cancelbtn" data-dismiss="modal">CANCEL</button>
-            </div>
-          </form>
+		    		<div class="modal-footer">
+		    			<input type="submit" class="btn btn-default pull-left" id="donebtn" value="DONE">
+		    			<button type="button" class="btn btn-default pull-left" id="cancelbtn" data-dismiss="modal">CANCEL</button>
+		    		</div>
+	    		</form>
 
-        </div>
+	    	</div>
         <!-- MODAL ENDS -->
 
       </div>

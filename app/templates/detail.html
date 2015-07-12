@@ -13,7 +13,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a id="home-btn" class="navbar-brand custom-nav" href="/welcome">PRODUCT NAME</a>
+			<a id="home-btn" class="navbar-brand custom-nav" href="/welcome">ADVOKIT</a>
 		</div>
 
 		<div>
@@ -32,9 +32,11 @@
 				PEOPLE > {{ perpname.upper() }} > GET HELP
 			</div>
 		</div>
-		<img src="{{ photo.get_url() }}" />
 
 		<hr>
+		<div class="img-container">
+			<img id="det-img" src="{{ photo.get_url() }}" />
+		</div>
 	</div>
 
 	<div class="col-md-4" id="get_help">
@@ -50,7 +52,8 @@
 					<div class="comment">
 						{{ comment.content }}
 						<br>
-						<span class="comment-date">{{ comment.created.strftime("%m/%d/%Y") }}</span>
+						<br>
+						<span class="comment-date">{{ comment.created.strftime("%m/%d/%Y %-H:%M:%S") }}</span>
 					</div>
 				{% endfor %}
 			</div>
